@@ -3,16 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="当方が提供するモバイルアプリのサポート情報および共通プライバシーポリシーです。">
   <title>アプリサポート / プライバシーポリシー</title>
   <style>
     :root {
-      --bg: #f7f7f8;
+      color-scheme: light dark;
+      --bg: #f7f8fb;
       --card: #ffffff;
-      --text: #1f2328;
-      --sub: #5b6470;
-      --line: #e5e7eb;
-      --accent: #f59e0b;
-      --accent-soft: #fff7e8;
+      --text: #1f2937;
+      --muted: #667085;
+      --border: #e5e7eb;
+      --accent: #4f46e5;
+      --accent-soft: #eef2ff;
+      --shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111827;
+        --card: #1f2937;
+        --text: #f3f4f6;
+        --muted: #cbd5e1;
+        --border: #374151;
+        --accent: #a5b4fc;
+        --accent-soft: #292f4f;
+        --shadow: none;
+      }
     }
 
     * {
@@ -21,204 +37,241 @@
 
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+        "Yu Gothic", "YuGothic", "Noto Sans JP", sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.75;
+      line-height: 1.8;
     }
 
     .container {
-      width: 100%;
-      max-width: 860px;
+      width: min(920px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 24px 16px 56px;
+      padding: 48px 0 72px;
     }
 
-    .hero {
-      background: linear-gradient(135deg, #fff7e8 0%, #ffffff 100%);
-      border: 1px solid #fde7b0;
-      border-radius: 20px;
-      padding: 28px 22px;
-      margin-bottom: 20px;
+    header {
+      margin-bottom: 28px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--accent-soft), var(--card));
+      box-shadow: var(--shadow);
     }
 
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: 30px;
-      line-height: 1.3;
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      line-height: 1.25;
     }
 
-    .hero p {
+    header p {
       margin: 0;
-      color: var(--sub);
+      color: var(--muted);
     }
 
-    .badge {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #fff;
-      border: 1px solid #f6d58c;
-      color: #9a6700;
-      font-size: 13px;
-      font-weight: 600;
+    main {
+      display: grid;
+      gap: 20px;
     }
 
-    .card {
+    section {
+      padding: 28px;
       background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 24px 20px;
-      margin-bottom: 16px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
     }
 
     h2 {
       margin: 0 0 14px;
-      font-size: 22px;
-      line-height: 1.4;
+      font-size: 1.35rem;
+      color: var(--accent);
     }
 
     p {
-      margin: 0 0 12px;
+      margin: 0 0 14px;
     }
 
-    p:last-child,
-    ul:last-child {
+    p:last-child {
       margin-bottom: 0;
     }
 
-    .note {
-      color: var(--sub);
-      font-size: 14px;
-    }
-
-    .contact-box {
-      background: var(--accent-soft);
-      border: 1px solid #fde7b0;
-      border-radius: 14px;
-      padding: 16px;
-      margin-top: 12px;
-    }
-
-    .contact-label {
-      margin: 0 0 6px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #9a6700;
+    ul {
+      margin: 10px 0 0;
+      padding-left: 1.3rem;
     }
 
     a {
-      color: #0a66c2;
-      text-decoration: none;
-      word-break: break-word;
+      color: var(--accent);
+      overflow-wrap: anywhere;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .contact {
+      padding: 16px 18px;
+      background: var(--accent-soft);
+      border-radius: 14px;
     }
 
-    ul {
-      margin: 0;
-      padding-left: 20px;
+    .note {
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     footer {
       margin-top: 28px;
       text-align: center;
-      color: var(--sub);
-      font-size: 13px;
-    }
-
-    @media (max-width: 640px) {
-      .hero {
-        padding: 24px 18px;
-      }
-
-      .hero h1 {
-        font-size: 26px;
-      }
-
-      .card {
-        padding: 20px 16px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
+      color: var(--muted);
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <section class="hero">
-      <div class="badge">Support & Privacy Policy</div>
+  <div class="container">
+    <header>
       <h1>アプリサポート / プライバシーポリシー</h1>
       <p>
-        このページは、当方が提供するモバイルアプリに関するサポート情報およびプライバシーポリシーをまとめた共通ページです。
+        このページは、当方が提供するモバイルアプリに関するサポート情報および
+        プライバシーポリシーをまとめた共通ページです。
+        App StoreのサポートURL・プライバシーポリシーURLとして共通で使用しています。
       </p>
-      <p class="note" style="margin-top: 10px;">
-        App Store のサポートURL・プライバシーポリシーURLとして共通で使用しています。
-      </p>
-    </section>
+    </header>
 
-    <section class="card">
-      <h2>サポート</h2>
-      <p>
-        アプリに関するご質問、不具合報告、ご意見は、以下の連絡先までお願いいたします。
-      </p>
-      <div class="contact-box">
-        <p class="contact-label">お問い合わせ先</p>
-        <p>メール: ssei06756@gmail.com</p>
-      </div>
-      <p class="note" style="margin-top: 12px;">
-        返信までお時間をいただく場合があります。あらかじめご了承ください。
-      </p>
-    </section>
+    <main>
+      <section>
+        <h2>サポート</h2>
+        <p>
+          アプリに関するご質問、不具合報告、ご意見は、以下の連絡先までお願いいたします。
+        </p>
+        <div class="contact">
+          <strong>お問い合わせ先</strong><br>
+          メール:
+          <p>ssei06756@gmail.com</p>
+        </div>
+        <p class="note">
+          返信までお時間をいただく場合があります。あらかじめご了承ください。
+        </p>
+      </section>
 
-    <section class="card">
-      <h2>プライバシーポリシー</h2>
-      <p>
-        当方が提供するアプリでは、機能提供、広告配信、利用状況の把握、品質改善等のために、必要に応じて第三者サービスを利用する場合があります。
-      </p>
-      <p>
-        利用するサービスには、広告配信サービス、分析ツール、クラッシュ解析ツール等が含まれる場合があります。これらの第三者サービスは、広告識別子、端末情報、利用状況に関する情報等を取得することがあります。
-      </p>
-      <p>
-        取得される情報、取得方法、利用目的は、各アプリの機能および利用している第三者サービスに応じて異なります。
-      </p>
-      <p>
-        当方は、個人を直接特定する目的で氏名、住所、電話番号等を収集することを意図していません。ただし、第三者サービスにより取り扱われる情報については、各サービス提供事業者のプライバシーポリシー等をご確認ください。
-      </p>
-      <p>
-        広告配信サービスとして Google AdMob を利用する場合があります。
-      </p>
-      <p>
-        Google の広告に関する情報は、以下をご確認ください。<br>
-        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">
-          https://policies.google.com/technologies/ads
-        </a>
-      </p>
-    </section>
+      <section>
+        <h2>プライバシーポリシー</h2>
+        <p>
+          当方が提供するアプリでは、ユーザーのプライバシーを尊重し、
+          個人情報の取り扱いに注意しています。
+        </p>
+      </section>
 
-    <section class="card">
-      <h2>免責事項</h2>
-      <p>
-        当方は、アプリの利用により生じた損害について責任を負いません。各アプリは現状有姿で提供されます。
-      </p>
-    </section>
+      <section>
+        <h2>取得する情報について</h2>
+        <p>
+          当方が提供するアプリでは、機能提供、広告配信、品質改善等のため、
+          アプリの内容に応じて必要な情報を取得する場合があります。
+          取得する情報はアプリごとに異なります。
+        </p>
+        <p>取得される可能性がある情報には、以下が含まれます。</p>
+        <ul>
+          <li>広告識別子</li>
+          <li>端末情報</li>
+          <li>アプリの利用状況に関する情報</li>
+          <li>クラッシュ情報</li>
+        </ul>
+        <p>
+          当方は、個人を直接特定する目的で氏名、住所、電話番号などを
+          収集することはありません。
+        </p>
+      </section>
 
-    <section class="card">
-      <h2>改定</h2>
-      <p>
-        本ページの内容は、必要に応じて予告なく変更されることがあります。
-      </p>
-    </section>
+      <section>
+        <h2>第三者サービスについて</h2>
+        <p>
+          一部のアプリでは、広告配信サービス、アクセス解析サービス、
+          クラッシュ解析サービス等の第三者サービスを利用する場合があります。
+        </p>
+        <p>
+          これらのサービス提供者が、サービス提供のために情報を取得する場合があります。
+        </p>
+        <p>
+          広告配信サービスとしてGoogle AdMobを利用する場合があります。
+          Googleによる情報の取り扱いについては、以下をご確認ください。
+        </p>
+        <p>
+          <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">
+            Google 広告に関するポリシー
+          </a>
+        </p>
+      </section>
+
+      <section>
+        <h2>ユーザーが追加するファイル・データについて</h2>
+        <p>
+          一部のアプリでは、ユーザーが選択したファイルや入力したデータを
+          アプリ内に保存する機能があります。
+        </p>
+        <p>例：</p>
+        <ul>
+          <li>作成したデータ</li>
+          <li>インポートしたファイル</li>
+          <li>画像</li>
+          <li>3Dモデルファイル</li>
+        </ul>
+        <p>
+          これらのデータは、各アプリの機能提供のために使用されます。
+          特別な記載がない限り、ユーザーの端末内に保存され、
+          開発者のサーバーへ送信されることはありません。
+        </p>
+      </section>
+
+      <section>
+        <h2>カメラ・写真機能について</h2>
+        <p>
+          一部のアプリでは、撮影、AR表示、画像保存などの機能提供のため、
+          カメラや写真ライブラリを使用する場合があります。
+        </p>
+        <p>
+          取得したカメラ映像や画像は、アプリの機能提供のために使用されます。
+          特別な記載がない限り、開発者が取得・保存・送信することはありません。
+        </p>
+      </section>
+
+      <section>
+        <h2>アプリ内購入について</h2>
+        <p>
+          一部のアプリでは、Appleが提供するアプリ内購入
+          （In-App Purchase）を利用する場合があります。
+        </p>
+        <p>
+          購入処理および決済情報はAppleによって管理されます。
+          開発者がクレジットカード番号などの決済情報を取得することはありません。
+        </p>
+      </section>
+
+      <section>
+        <h2>ユーザーコンテンツについて</h2>
+        <p>
+          ユーザー自身が追加した画像、ファイル、3Dモデル等を利用する場合、
+          その利用権限や権利関係についてはユーザー自身の責任で確認してください。
+        </p>
+      </section>
+
+      <section>
+        <h2>免責事項</h2>
+        <p>
+          当方は、アプリの利用により生じたいかなる損害についても責任を負いません。
+          各アプリは現状有姿で提供されます。
+        </p>
+      </section>
+
+      <section>
+        <h2>改定</h2>
+        <p>
+          本ページの内容は、必要に応じて予告なく変更されることがあります。
+        </p>
+      </section>
+    </main>
 
     <footer>
-      © 2026
+      © 2026 App Support
     </footer>
-  </main>
+  </div>
 </body>
 </html>
